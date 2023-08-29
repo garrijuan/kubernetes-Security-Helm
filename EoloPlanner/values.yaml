@@ -2,9 +2,24 @@ networkPolicies:
   enabled: true
 
 ingress:
-  host: www.mastercloudapps.com
-  frontPath:
+  host: mastercloudapps
+  frontPath: /
   topoPath: /toposervice
+
+mongodb:
+  image:
+    name: mongo
+    version: 5.0-focal
+
+mysql:
+  image:
+    name: mysql
+    version: 8.0
+
+rabbitmq:
+  image:
+    name: rabbitmq
+    version: 3.11-management
 
 toposervice:
   image:
@@ -23,20 +38,5 @@ server:
 
 planner:
   image:
-    name: manloralm/planner
-    version: v0.1
-
-mongodb:
-  image:
-    name: mongo
-    version: 5.0-focal
-
-mysql:
-  image:
-    name: mysql
-    version: 8.0
-
-rabbitmq:
-  image:
-    name: rabbitmq
-    version: 3.11-management
+    name: mastercloudapps/planner
+    version: v1.23
