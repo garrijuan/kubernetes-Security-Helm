@@ -39,11 +39,13 @@ spec:
         - name: RABBITMQ_HOST
           value: rabbitmq
         - name: RABBITMQ_PORT
-          value: 5672
+          value: "5672"
         - name: RABBITMQ_USERNAME
           value: root
         - name: RABBITMQ_PASSWORD
           value: password
+        - name: RABBITMQ_URL
+          value: amqp://root:password@rabbitmq
   replicas: 1
 
 ---
@@ -61,4 +63,4 @@ spec:
     targetPort: 8080
     protocol: TCP
     name: serverservice-port
-  type: NodePort
+  type: ClusterIP

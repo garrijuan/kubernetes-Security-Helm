@@ -3,7 +3,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: topo
+  name: toposervice
 spec:
   strategy:
     type: Recreate
@@ -25,11 +25,11 @@ spec:
         image: {{ .Values.toposervice.image.name }}:{{ .Values.toposervice.image.version }}        
         env:
         - name: TOPO_PORT
-          value: 8181
+          value: "8181"
         - name: SPRING_DATA_MONGODB_HOST
           value: mongodb
         - name: SPRING_DATA_MONGODB_PORT
-          value: 27017
+          value: "27017"
         - name: SPRING_DATA_MONGODB_DATABASE
           value: topoDB
         - name: SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE
@@ -57,4 +57,4 @@ spec:
     targetPort: 8181
     protocol: TCP
     name: toposervice-port
-  type: NodePort
+  type: ClusterIP
