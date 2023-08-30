@@ -62,4 +62,4 @@ spec:
     name: planner-port
   selector:
     app: planner
-  type: ClusterIp
+  type: ClusterIP

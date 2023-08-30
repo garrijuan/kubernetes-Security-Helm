@@ -65,4 +65,4 @@ spec:
     targetPort: 27019
     name: mongo-port-27019
     protocol: TCP
-  type: ClusterIp
+  type: ClusterIP
