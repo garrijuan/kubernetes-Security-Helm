@@ -50,4 +50,4 @@ spec:
     targetPort: 3306
     name: mysql-port
     protocol: TCP
-  type: NodePort
+  type: ClusterIp
